@@ -1,0 +1,35 @@
+{
+  "name": "employee_manager",
+  "version": "1.0.0",
+  "description": "Employee Manager Desktop App",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^2.0.18",
+    "electron-builder": "^20.27.1",
+    "electron-winstaller": "^2.6.4"
+  },
+  "dependencies": {
+    "electron-packager": "^12.1.0",
+    "jquery": "^3.4.1"
+  },
+  "scripts": {
+    "winrun": "electron-packager . EmployeeManager --all --no-prune",
+    "pack": "build --dir",
+    "dist": "build",
+    "pack-win": "build --dir --win",
+    "dist-win": "build --win",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.electron.employeeManager",
+    "asar": "true",
+    "win": {
+      "target": "nsis:x64",
+      "icon": "assets/win/icon2.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false
+    }
+  }
+}
